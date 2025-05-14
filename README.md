@@ -19,5 +19,15 @@ So I decided to look for used 5G modules, when succeded to found a pair used and
 
 I bought an electrical waterproof box (with transparent lid, but it was just a whim to made some pictures and this documentation), the [RouterBoard RGB33G](https://mikrotik.com/product/rbm33g), a Kalea Informatique [M.2 to USB3.0 adapter](https://www.kalea-informatique.com/m-2-ngff-3g-4g-5g-module-to-usb-3-0-adapter-with-dual-sim-card-slot-and-power.htm) for 3G/4G/5G modules and an used 5G M.2 module.
 NB: It's mandatory to found a 4G/5G module with USB3.0 port, not cheap PCIe only because they won't work with RouterBoards. Moreover, M.2 to miniPCIe adapter cannot be used with RouterBoards or the speed will be limited to USB2.0 speed (480Mbps, so not more then ~250Mbps LTE speed).
-I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a waterproof ethernet connector, some 2mm and 3mm hexagonal spacers (I preferred nylon for 2mm and brass for 3mm, because 3mm ones are used to mechanically support the entire internal structure while 2mm ones 
-are used to supports PCBs of RouterBoard and adapter and to stabilize the structure).
+I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a waterproof ethernet connector, some 2mm and 3mm hexagonal spacers (I preferred nylon for 2mm and brass for 3mm, because 3mm ones are used to mechanically support the entire internal structure while 2mm ones are used to supports PCBs of RouterBoard and adapter and to stabilize the structure).
+
+
+| | |
+| ------------- | ------------- |
+| Waterproof electrical junction box:| Waterproof box inside parts and plate: |
+| ![20250513_211703.jpg](20250513_211703.jpg) | ![20250513_211718.jpg](20250513_211718.jpg) |
+| Details of the parts and plate:| Box parts and a set of 2mm nylon hex spacers: |
+| ![20250513_211815.jpg](20250513_211815.jpg) | ![20250513_212418.jpg](20250513_212418.jpg) |
+| First step of spacers assembly:| TBD |
+| ![20250513_215153.jpg](20250513_215153.jpg) | TBD |
+
