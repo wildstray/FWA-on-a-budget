@@ -29,12 +29,12 @@ I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a wat
 | Box parts and a set of M3 nylon hex spacers: | First step of spacers assembly: |
 | ![20250513_212418.jpg](20250513_212418.jpg) | ![20250513_215153.jpg](20250513_215153.jpg) |
 | First step of spacers assembly:| Plate assembly and boxed Kalea Informatique M.2 to USB3.0 adapter: |
-| ![20250513_215216.jpg](20250513_215216.jpg) | [20250514_114826.jpg](20250514_114826.jpg) |
+| ![20250513_215216.jpg](20250513_215216.jpg) | ![20250514_114826.jpg](20250514_114826.jpg) |
 | Kalea Informatique M.2 to USB3.0 adapter unboxing:| Kalea Informatique M.2 to USB3.0 adapter in place: |
-| ![20250514_115018.jpg](20250514_115018.jpg) | [20250514_120543.jpg](20250514_120543.jpg) |
+| ![20250514_115018.jpg](20250514_115018.jpg) | ![20250514_120543.jpg](20250514_120543.jpg) |
 | Also RouterBoard RBM33G in place:| Detail of the entire internal assembly: |
-| ![20250514_120818.jpg](20250514_120818.jpg) | [20250514_120818.jpg](20250514_120818.jpg) |
+| ![20250514_120818.jpg](20250514_120818.jpg) | ![20250514_120818.jpg](20250514_120818.jpg) |
 | USB cable connected thru the boards and 5G module in place:| Temporary antennas for testing: |
-| ![20250514_123355.jpg](20250514_123355.jpg) | [20250514_123711.jpg](20250514_123711.jpg) |
+| ![20250514_123355.jpg](20250514_123355.jpg) | ![20250514_123711.jpg](20250514_123711.jpg) |
 
 
