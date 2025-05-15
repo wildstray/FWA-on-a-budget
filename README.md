@@ -36,5 +36,7 @@ I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a wat
 | ![20250514_120818.jpg](20250514_120818.jpg) | ![20250514_120818.jpg](20250514_120818.jpg) |
 | USB cable connected thru the boards and 5G module in place:| Temporary antennas for testing: |
 | ![20250514_123355.jpg](20250514_123355.jpg) | ![20250514_123711.jpg](20250514_123711.jpg) |
+| Waterproof box and metal hex spacers in place:| TBD |
+| ![20250515_154155.jpg](20250515_154155.jpg) | TDB |
 
 
