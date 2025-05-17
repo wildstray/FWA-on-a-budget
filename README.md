@@ -36,7 +36,7 @@ Before installing the routing outside, I did some changes and upgrades to it. I 
 | Kalea Informatique M.2 to USB3.0 adapter unboxing:| Kalea Informatique M.2 to USB3.0 adapter in place: |
 | ![20250514_115018.jpg](20250514_115018.jpg) | ![20250514_120543.jpg](20250514_120543.jpg) |
 | Also RouterBoard RBM33G in place:| Detail of the entire internal assembly: |
-| ![20250514_120818.jpg](20250514_120818.jpg) | ![20250514_120818.jpg](20250514_120818.jpg) |
+| ![20250514_120818.jpg](20250514_120818.jpg) | ![20250514_120848.jpg](20250514_120848.jpg) |
 | USB cable connected thru the boards and 5G module in place:| Temporary antennas for testing: |
 | ![20250514_123355.jpg](20250514_123355.jpg) | ![20250514_123711.jpg](20250514_123711.jpg) |
 | Waterproof box and metal hex spacers in place:| Waterproof connector in place and internal assembly with new USB cable and boards moved |
