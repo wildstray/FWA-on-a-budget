@@ -9,7 +9,7 @@ I have a WindTre BTS at 1Km in LOS from my home and now this BTS have 5G too. Wh
 
 ## The solution
 
-I tried a WindTre SIM and obtained, with a 5G phone, 450/100Mbps! Outside, because inside due to thick walls speed really slows down. So I decided to unsubscribe all others utilities and subscribe a WindTre FWA (5G router included) or a WindTre unlimited SIM.
+I tried a WindTre SIM and obtained, with a 5G phone, 450/100Mbps! Unfortunately outside only, because inside due to thick walls the speed really slows down. So I decided to unsubscribe all others utilities and subscribe a WindTre FWA (5G router included) or a WindTre unlimited SIM.
 But FWA come with inside router only and I hate using consumer chinese routers (expecially if telco customized and locked down). And WindTre FWA and unlimited SIMs are behind CGNAT, so I couldn't have public IP, my own home servers. Moreover with WindTre there are disconnections every 4 hours.
 There are telco brokers that sells DeNAT SIM with dynamic public IP address and disconnections every 24 hours. But what about the router? 4G LTE routers are relatively cheap, also CAT6+. Instead, 5G routers are extremely expensive, also chinese ones.
 I love MikroTik devices, they are cheap but (usually...) reliable and powerful. But they don't have outside 5G routers and the only inside one they sell, Chateau, is extremely expensive. Also used outside routers are expensive and unobtainable.
@@ -17,10 +17,13 @@ So I decided to look for used 5G modules, when succeded to found a pair used and
 
 ## My making
 
-I bought an electrical waterproof box (with transparent lid, but it was just a whim to made some pictures and this documentation), the [RouterBoard RGB33G](https://mikrotik.com/product/rbm33g), a Kalea Informatique [M.2 to USB3.0 adapter](https://www.kalea-informatique.com/m-2-ngff-3g-4g-5g-module-to-usb-3-0-adapter-with-dual-sim-card-slot-and-power.htm) for 3G/4G/5G modules and an used 5G M.2 module.
+I bought an electrical waterproof box (with transparent lid, but it was just a whim to made some pictures and this documentation), the [RouterBoard RGB33G](https://mikrotik.com/product/rbm33g), a Kalea Informatique [M.2 to USB3.0 adapter](https://www.kalea-informatique.com/m-2-ngff-3g-4g-5g-module-to-usb-3-0-adapter-with-dual-sim-card-slot-and-power.htm) for 3G/4G/5G modules and an used Fibocom FM150-AE M.2 module.
 NB: It's mandatory to found a 4G/5G module with USB3.0 port, not cheap PCIe only because they won't work with RouterBoards. Moreover, M.2 to miniPCIe adapter cannot be used with RouterBoards or the speed will be limited to USB2.0 speed (480Mbps, so not more then ~250Mbps LTE speed).
-I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a waterproof ethernet connector, some M3 and M4 hexagonal spacers (I preferred nylon for M3 and metal for M4, because M3 ones are used to supports PCBs of RouterBoard and adapter and to stabilize the structure while M4 ones are used to mechanically support the entire internal structure into the box). 
+I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a waterproof ethernet connector, some M3 and M4 hexagonal spacers (I preferred nylon for M3 and metal for M4, because M3 ones are used to supports PCBs of RouterBoard and adapter and to stabilize the structure while M4 ones are used to mechanically support the entire internal structure into the box).
 
+## Upgrades
+
+Before installing the routing outside, I did some changes and upgrades to it. I moved the boards of a pair of hole (due to the USB cable too bent and tensioning USB connectors) and changed the USB cable with a braided nylon one. Moreover I found an used Quectel RM502Q-GL, for sure faster and with better band aggregation than the Fibocom FM150-AE, so I'm going to change also the modem.
 
 | | |
 | ------------- | ------------- |
