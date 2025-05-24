@@ -41,4 +41,8 @@ Before installing the routing outside, I did some changes and upgrades to it. I 
 | ![20250514_123355.jpg](20250514_123355.jpg) | ![20250514_123711.jpg](20250514_123711.jpg) |
 | Waterproof box and metal hex spacers in place:| Waterproof connector in place and internal assembly with new USB cable and boards moved |
 | ![20250515_154155.jpg](20250515_154155.jpg) | ![20250517_152932.jpg](20250517_152932.jpg) |
+| Waterproof box and antennas:| Drilled holes for antennas and rubber gasket: |
+| ![20250524_134744.jpg](20250524_134744.jpg) | ![20250524_134735.jpg](20250524_134735.jpg) |
+| Antennas in place on the waterproof box:| Final assembly, yeah! |
+| ![20250524_140934.jpg](20250524_140934.jpg) | ![20250524_141838.jpg](20250524_141838.jpg) |
 
