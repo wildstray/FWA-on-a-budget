@@ -21,6 +21,65 @@ I bought an electrical waterproof box (with transparent lid, but it was just a w
 NB: It's mandatory to found a 4G/5G module with USB3.0 port, not cheap PCIe only because they won't work with RouterBoards. Moreover, M.2 to miniPCIe adapter cannot be used with RouterBoards or the speed will be limited to USB2.0 speed (480Mbps, so not more then ~250Mbps LTE speed).
 I bought also a pair of chinese cheap omnidirectional antennas (2x2 MIMO), a waterproof ethernet connector, some M3 and M4 hexagonal spacers (I preferred nylon for M3 and metal for M4, because M3 ones are used to supports PCBs of RouterBoard and adapter and to stabilize the structure while M4 ones are used to mechanically support the entire internal structure into the box). NB: M3 screws don't enter into pre-drilled plate: the holes are squared and narrower. I used to widen the holes I have to use with a small round file.
 
+### RouterOS and modem configuration
+
+RBM33G came with ROS 6.4x, so I upgraded to 7.18 and then 7.19. Configured a bridge, with no spanning tree and addedd bridge1 to LAN interface list, lte1 to WAN interface list:
+```
+/interface bridge
+add name=bridge1 protocol-mode=none
+/interface bridge port
+add bridge=bridge1 interface=LAN
+add interface=lte1 list=WAN
+```
+
+Configured lte1 interface with WindTre Unico APN, MBIM mode:
+```
+/interface lte apn
+set [ find default=yes ] default-route-distance=1 ip-type=ipv4 use-network-apn=no
+add apn=myinternet.wind default-route-distance=1 ip-type=ipv4 name="WindTre Unico"
+/interface lte
+set [ find default-name=lte1 ] allow-roaming=no apn-profiles="WindTre Unico" mtu=1480
+/interface lte settings
+set mode=mbim
+```
+
+Configured IP address on LAN interface and DHCP; configured cloud DDNS to find public IP address with DeNAT SIM:
+```
+/ip address
+add address=172.16.20.1/24 interface=bridge1 network=172.16.20.0
+/ip cloud
+set ddns-enabled=yes
+/ip dhcp-server
+add address-pool=default-dhcp bootp-support=none interface=bridge1 lease-time=1d name=defconf
+/ip dhcp-server config
+set store-leases-disk=1h
+/ip dhcp-server network
+add address=172.16.20.0/24 dns-server=172.16.20.1 gateway=172.16.20.1
+/ip pool
+add name=default-dhcp next-pool=default-dhcp ranges=172.16.20.2-172.16.20.254
+```
+
+Configured the firewall and NAT (with hw offload for LAN), tarpitting of port scanning, limited ICMP:
+```
+/ip firewall filter
+add action=fasttrack-connection chain=forward comment="accept estab,related,untrack (fasttrack)" connection-state=established,related,untracked hw-offload=yes
+add action=accept chain=input comment="accept estab,related,untrack" connection-state=established,related,untracked
+add action=drop chain=forward comment="drop invalid" connection-state=invalid log=yes
+add action=drop chain=forward comment="drop all from WAN not DSTNATed" connection-nat-state=dstnat connection-state=new log=yes out-interface-list=WAN
+add action=drop chain=input comment="drop invalid" connection-state=invalid log=yes
+add action=add-src-to-address-list address-list=scanners address-list-timeout=none-dynamic chain=input comment="detect portscan -> list scanners" in-interface-list=WAN protocol=tcp psd=5,3s,3,1
+add action=tarpit chain=input comment="tarpit if into list scanners" in-interface-list=WAN protocol=tcp src-address-list=scanners
+add action=accept chain=input comment="accept ICMP (limited 1pkt/s)" limit=1,5:packet protocol=icmp
+add action=accept chain=input comment="allow neighbour discovery (from !WAN)" dst-port=5678 in-interface-list=!WAN protocol=udp
+add action=accept chain=input comment="accept all from LAN" connection-state=new in-interface-list=LAN
+add action=drop chain=input comment="drop any from !LAN" in-interface-list=!LAN log=yes
+/ip firewall mangle
+add action=change-mss chain=forward comment="clamp MSS to path MTU" disabled=yes new-mss=clamp-to-pmtu protocol=tcp tcp-flags=syn
+/ip firewall nat
+add action=masquerade chain=srcnat comment="masquerade to lte1" out-interface-list=WAN
+```
+Obviously my configuration is more complex, I have VPN, dynamic routing and the "LAN" actually is a DMZ... but for security and privacy reason I omitted it ;-)
+
 ## Upgrades
 
 Before installing the routing outside, I did some changes and upgrades to it. I moved the boards of a pair of hole (due to the USB cable too bent and tensioning USB connectors) and changed the USB cable with a braided nylon one. Moreover I found an used Quectel RM502Q-GL, for sure faster and with better band aggregation than the Fibocom FM150-AE, so I'm going to change also the modem.
